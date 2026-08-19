@@ -143,7 +143,7 @@ export default function Home() {
             <img
               src={asset('/images/welcome-quran.jpg')}
               alt="Open Qur’an prepared for study"
-              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-2xl"
+              className="aspect-square w-full rounded-2xl object-cover shadow-2xl"
             />
             <div className="absolute -bottom-6 -left-6 rounded-xl bg-gold-500 p-6 text-white shadow-lg">
               <p className="text-3xl font-bold">24/7</p>
