@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpen, Users, Heart } from 'lucide-react'
+import { asset } from '../lib/asset'
 
 const slides = [
   {
@@ -44,7 +45,7 @@ export default function Hero() {
         {slides.map((slide, index) => (
           <img
             key={slide.image}
-            src={slide.image}
+            src={asset(slide.image)}
             alt={slide.caption}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
               index === active ? 'animate-kenburns opacity-100' : 'opacity-0'

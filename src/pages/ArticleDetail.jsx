@@ -3,6 +3,7 @@ import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import { ArrowLeft } from 'lucide-react'
 import { articles } from '../data/articles'
+import { asset } from '../lib/asset'
 
 export default function ArticleDetail() {
   const { slug } = useParams()
@@ -58,7 +59,7 @@ export default function ArticleDetail() {
 
       <div className="relative h-72 overflow-hidden sm:h-96">
         <img
-          src={article.image}
+          src={asset(article.image)}
           alt={article.title}
           className="h-full w-full object-cover"
         />

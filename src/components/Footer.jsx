@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Mail, MapPin, Clock } from 'lucide-react'
+import { asset } from '../lib/asset'
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2">
               <img
-                src="/images/logo.png"
+                src={asset('/images/logo.png')}
                 alt="Rabi Allah Islamic Academy logo"
                 className="h-8 w-auto"
               />

@@ -2,6 +2,7 @@ import { Mail, MapPin, Clock, Facebook, Instagram, ArrowRight } from 'lucide-rea
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import { courses } from '../data/courses'
+import { asset } from '../lib/asset'
 
 export default function Contact() {
   const contactData = {
@@ -113,7 +114,7 @@ export default function Contact() {
 
             <div className="mt-10">
               <img
-                src="/images/contact-arches.jpg"
+                src={asset('/images/contact-arches.jpg')}
                 alt="Arches of a historic mosque"
                 className="aspect-[16/9] w-full rounded-2xl object-cover shadow-lg"
               />
