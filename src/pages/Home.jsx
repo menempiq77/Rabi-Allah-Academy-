@@ -58,19 +58,24 @@ const howItWorks = [
 
 const testimonials = [
   {
-    name: 'Amina S.',
-    location: 'UK',
-    text: 'I truly appreciate the effort the teacher has put into helping me progress. By the permission of Allah, I have come so far in my Qur’an journey.',
+    name: 'Khadijah R.',
+    location: 'Australia',
+    text: 'My teacher never once made me feel slow or embarrassed. Alhamdulillah, in a few months I moved from struggling with letters to reading with Tajweed.',
   },
   {
-    name: 'Umm Yusuf',
-    location: 'UAE',
-    text: 'My daughter received a certificate from school for her amazing recitation. We are so grateful for the support and dedication of her teacher.',
+    name: 'Abu Ibrahim',
+    location: 'Germany',
+    text: 'My son now leads the Maghrib prayer at home and his madrasah praised his recitation. May Allah reward his teacher for such patience and care.',
   },
   {
-    name: 'Maryam A.',
-    location: 'Canada',
-    text: 'Today we were able to read the Qur’an fluently and confidently. JazakAllah Khair to the teacher for being such an important part of our journey.',
+    name: 'Safiyyah M.',
+    location: 'South Africa',
+    text: 'As a new Muslim I had endless questions. The classes answered them gently and clearly, and now I pray and read the Qur’an with confidence.',
+  },
+  {
+    name: 'Zainab T.',
+    location: 'Malaysia',
+    text: 'The one-to-one lessons fit around my work and my children. JazakAllahu khayran — our whole family’s connection with the Qur’an has grown.',
   },
 ]
 
@@ -135,9 +140,9 @@ export default function Home() {
           </div>
           <div className="relative">
             <img
-              src="/images/quran.jpg"
-              alt="Qur’an learning environment"
-              className="rounded-2xl shadow-2xl"
+              src="/images/welcome-quran.jpg"
+              alt="Open Qur’an prepared for study"
+              className="aspect-[4/3] w-full rounded-2xl object-cover shadow-2xl"
             />
             <div className="absolute -bottom-6 -left-6 rounded-xl bg-gold-500 p-6 text-white shadow-lg">
               <p className="text-3xl font-bold">24/7</p>
@@ -246,7 +251,7 @@ export default function Home() {
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-700">Testimonials</p>
             <h2 className="section-title mt-2">What Our Students Say</h2>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((testimonial) => (
               <div key={testimonial.name} className="card">
                 <div className="flex gap-1 text-gold-500">

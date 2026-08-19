@@ -113,9 +113,9 @@ export default function Contact() {
 
             <div className="mt-10">
               <img
-                src="/images/contact.jpg"
-                alt="Qur’an learning"
-                className="rounded-2xl shadow-lg"
+                src="/images/contact-arches.jpg"
+                alt="Arches of a historic mosque"
+                className="aspect-[16/9] w-full rounded-2xl object-cover shadow-lg"
               />
             </div>
           </div>
@@ -169,7 +169,6 @@ export default function Contact() {
                       {course.title}
                     </option>
                   ))}
-                  <option>General Inquiry</option>
                 </select>
               </div>
               <div>

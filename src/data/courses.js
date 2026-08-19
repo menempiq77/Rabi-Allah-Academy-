@@ -12,7 +12,7 @@ export const courses = [
     title: 'Quran Recitation & Tajweed',
     price: 'From $20 / month',
     icon: Mic,
-    image: '/images/arabic.jpg',
+    image: '/images/course-recitation.jpg',
     summary:
       'Improve fluency, beauty, and correct pronunciation in recitation with guided correction and structured Tajweed.',
     features: [
@@ -42,7 +42,7 @@ export const courses = [
     title: 'Quran Memorization',
     price: 'From $20 / month',
     icon: Brain,
-    image: '/images/memorize.jpg',
+    image: '/images/course-memorization.jpg',
     summary:
       'Personalized hifz plans with revision cycles to maintain long-term retention.',
     features: [
@@ -72,7 +72,7 @@ export const courses = [
     title: 'Arabic through Qur’an',
     price: 'From $20 / month',
     icon: BookOpen,
-    image: '/images/arabic.jpg',
+    image: '/images/course-arabic.jpg',
     summary:
       'Learn Classical Arabic directly through the Book of Allah, connecting vocabulary and grammar to real Quranic verses.',
     features: [
@@ -102,7 +102,7 @@ export const courses = [
     title: 'Islamic Studies',
     price: 'From $20 / month',
     icon: GraduationCap,
-    image: '/images/education.jpg',
+    image: '/images/course-islamic-studies.jpg',
     summary:
       'A comprehensive study of Aqeedah, Fiqh, Seerah, Tafsir, and Hadith for all ages.',
     features: [
@@ -132,7 +132,7 @@ export const courses = [
     title: 'Islam for New Muslims',
     price: 'Free',
     icon: Heart,
-    image: '/images/quran.jpg',
+    image: '/images/course-new-muslims.jpg',
     summary:
       'A welcoming introduction to the beliefs, practices, and ethos of Islam—designed for new Muslims and those considering reverting.',
     features: [

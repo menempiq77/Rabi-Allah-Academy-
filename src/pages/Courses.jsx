@@ -38,8 +38,15 @@ export default function Courses() {
         path="/courses"
       />
       <JsonLd data={courseListData} />
-      <div className="bg-primary-900 py-20 text-center text-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden bg-primary-900 py-20 text-center text-white">
+        <img
+          src="/images/motif-dome.jpg"
+          alt="Decorated dome of a mosque"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary-950/85" />
+        <div className="pattern-overlay animate-pattern-drift absolute inset-0 opacity-20" />
+        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-serif">Our Courses</h1>
           <p className="mt-4 text-lg text-primary-100">
             A complete curriculum aligned with authentic Islamic learning goals and student levels.
