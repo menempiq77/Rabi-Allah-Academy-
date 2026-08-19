@@ -20,6 +20,13 @@ export default function ArticleDetail() {
   }
 
   const Icon = article.icon
+  const formattedDate = article.date
+    ? new Date(article.date).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })
+    : null
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -27,6 +34,7 @@ export default function ArticleDetail() {
     description: article.excerpt,
     image: `https://rabiallah.com${article.image}`,
     url: `https://rabiallah.com/articles/${article.slug}`,
+    datePublished: article.date,
     author: {
       '@type': 'Organization',
       name: 'Rabi Allah Islamic Academy',
@@ -73,12 +81,54 @@ export default function ArticleDetail() {
       </div>
 
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-lg font-medium text-slate-700 leading-relaxed">{article.excerpt}</p>
+        {formattedDate && (
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary-700">
+            {formattedDate}
+          </p>
+        )}
+        <p className="mt-3 text-lg font-medium text-slate-700 leading-relaxed">{article.excerpt}</p>
         <div className="mt-10 space-y-6 text-lg leading-relaxed text-slate-700">
-          {article.content.map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
+          {article.blocks.map((block, idx) => {
+            if (block.type === 'h') {
+              return (
+                <h2 key={idx} className="pt-4 text-2xl font-bold text-slate-900">
+                  {block.text}
+                </h2>
+              )
+            }
+            if (block.type === 'li') {
+              return (
+                <div key={idx} className="flex gap-3">
+                  <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-gold-500" />
+                  <p>{block.text}</p>
+                </div>
+              )
+            }
+            if (block.type === 'quote') {
+              return (
+                <blockquote
+                  key={idx}
+                  className="border-l-4 border-primary-600 bg-primary-50 px-6 py-4 font-serif italic text-slate-800"
+                >
+                  {block.text}
+                </blockquote>
+              )
+            }
+            return <p key={idx}>{block.text}</p>
+          })}
         </div>
+
+        {article.video && (
+          <div className="mt-12 aspect-video overflow-hidden rounded-2xl shadow-lg">
+            <iframe
+              src={`https://www.youtube.com/embed/${article.video}`}
+              title={article.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="h-full w-full"
+            />
+          </div>
+        )}
         <div className="mt-12 border-t border-slate-200 pt-8">
           <Link to="/articles" className="btn-secondary">
             <ArrowLeft className="mr-2 h-4 w-4" /> Back to Articles

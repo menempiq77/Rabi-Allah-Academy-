@@ -2,6 +2,33 @@ import { Target, Compass, Sparkles, User } from 'lucide-react'
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 
+const teachers = [
+  {
+    name: 'Ustadha Aisha',
+    image: '/images/motif-manuscript.jpg',
+    subject: 'Qur’an, Tajweed & Arabic',
+    bio: 'Ijazah-trained in recitation, teaching Tajweed and Classical Arabic to sisters and children.',
+  },
+  {
+    name: 'Ustadha Fatima',
+    image: '/images/motif-tiles.jpg',
+    subject: 'Islamic Studies & Tarbiyah',
+    bio: 'Nurtures faith, character, and Islamic manners in children, youth, and adult learners.',
+  },
+  {
+    name: 'Ustadh Yusuf',
+    image: '/images/iqra.jpg',
+    subject: 'Hifz & Qira’ah',
+    bio: 'Guides memorisation with structured revision plans, from short Surahs to the full Qur’an.',
+  },
+  {
+    name: 'Ustadh Bilal',
+    image: '/images/motif-mihrab.jpg',
+    subject: 'Aqidah & New Muslims',
+    bio: 'Welcoming teacher covering the foundations of belief, worship, and daily practice.',
+  },
+]
+
 export default function About() {
   const aboutData = {
     '@context': 'https://schema.org',
@@ -25,8 +52,15 @@ export default function About() {
         path="/about"
       />
       <JsonLd data={aboutData} />
-      <div className="bg-primary-900 py-20 text-center text-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden bg-primary-900 py-20 text-center text-white">
+        <img
+          src="/images/lantern.jpg"
+          alt="Islamic lantern"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary-950/85" />
+        <div className="pattern-overlay animate-pattern-drift absolute inset-0 opacity-20" />
+        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-serif">About Rabi Allah</h1>
           <p className="mt-4 text-lg text-primary-100">
             Our vision, mission, and the values that guide every class we teach.
@@ -132,75 +166,77 @@ export default function About() {
         <div className="mt-20">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative">
+              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary-100 via-gold-100 to-primary-50" />
               <img
-                src="/images/arabic.jpg"
-                alt="Islamic education and learning"
-                className="rounded-2xl shadow-xl"
+                src="/images/founder.jpg"
+                alt="Founder of Rabi Allah Islamic Academy"
+                className="relative w-full rounded-2xl object-cover shadow-xl"
               />
             </div>
             <div>
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold-100">
                 <User className="h-6 w-6 text-gold-700" />
               </div>
-              <h2 className="mt-6 section-title">The Founder</h2>
-              <p className="mt-4 text-slate-600 leading-relaxed">
-                Rabi Allah Islamic Academy was founded with a sincere desire to make
-                authentic Islamic education accessible to all. The founder established
-                Rabi Allah to bridge the gap between classical Islamic knowledge and the
-                contemporary learner.
+              <h2 className="mt-6 section-title">A Word from the Founder</h2>
+              <blockquote className="mt-6 border-l-4 border-gold-400 pl-5 text-lg font-serif italic text-slate-800">
+                “Knowledge is not what we collect — it is what we become. Rabi Allah
+                exists so that every verse you learn changes the way you live.”
+              </blockquote>
+              <p className="mt-6 text-slate-600 leading-relaxed">
+                I founded Rabi Allah Islamic Academy after seeing how many Muslims love
+                the Qur’an yet never find a teacher who fits their language, their
+                timezone, or their pace. So we built the academy around the student:
+                one-to-one classes, patient teachers, and a curriculum drawn straight
+                from the Qur’an and the authentic Sunnah.
               </p>
               <p className="mt-4 text-slate-600 leading-relaxed">
-                With a heart for education and community upliftment, the academy was built
-                on the belief that seeking knowledge is a noble path that draws a person
-                closer to Allah and equips them to benefit others.
+                Our promise is simple. You will not just read Arabic letters — you will
+                understand what your Lord is saying to you, and you will carry it into
+                your prayer, your home, and your character. Whether you are five or
+                fifty, beginning your first Surah or your first year as a Muslim, there
+                is a place for you here.
+              </p>
+              <p className="mt-4 text-slate-600 leading-relaxed">
+                The Prophet (ﷺ) said: “The best of you are those who learn the Qur’an
+                and teach it.” Every class we open is an attempt to stand somewhere in
+                that hadith — and to help you do the same.
               </p>
             </div>
           </div>
         </div>
 
         {/* Teachers */}
-        <div className="mt-24">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary-700">Our Faculty</p>
-            <h2 className="mt-2 section-title">Well Qualified Teachers</h2>
-            <p className="mt-4 mx-auto max-w-3xl section-subtitle">
-              Professional, patient, and committed — we have male and female qualified teachers — helping every student progress in their Islamic journey.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: 'Ustadha Aisha',
-                image: '/images/teacher1.jpg',
-                subject: 'Qur’an, Tajweed & Arabic',
-                bio: 'Experienced in teaching Quranic recitation, Tajweed rules, and Classical Arabic to students of all ages.',
-              },
-              {
-                name: 'Ustadha Fatima',
-                image: '/images/teacher2.jpg',
-                subject: 'Islamic Studies & Tarbiyah',
-                bio: 'Passionate about nurturing faith, character, and Islamic manners in children, youth, and adults.',
-              },
-              {
-                name: 'Ustadha Maryam',
-                image: '/images/teacher3.jpg',
-                subject: 'New Muslims & Aqidah',
-                bio: 'Welcoming and patient instructor guiding new Muslims through the foundations of faith and practice.',
-              },
-            ].map((teacher) => (
-              <div key={teacher.name} className="card text-center overflow-hidden">
-                <div className="mx-auto h-40 w-40 overflow-hidden rounded-full">
-                  <img
-                    src={teacher.image}
-                    alt={`${teacher.name}, ${teacher.subject}`}
-                    className="h-full w-full object-cover"
-                  />
+        <div className="relative mt-24 overflow-hidden rounded-3xl bg-primary-900 px-6 py-16 sm:px-10">
+          <div className="pattern-overlay animate-pattern-drift absolute inset-0 opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-950/60 via-transparent to-primary-950/60" />
+          <div className="relative">
+            <div className="text-center text-white">
+              <p className="text-sm font-semibold uppercase tracking-wider text-gold-300">Our Faculty</p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Well Qualified Teachers</h2>
+              <p className="mt-4 mx-auto max-w-3xl text-lg text-primary-100">
+                Professional, patient, and committed — two female and two male qualified
+                teachers helping every student progress in their Islamic journey.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {teachers.map((teacher) => (
+                <div
+                  key={teacher.name}
+                  className="rounded-2xl border border-white/15 bg-white/95 p-6 text-center shadow-lg backdrop-blur transition hover:-translate-y-1 hover:shadow-2xl"
+                >
+                  <div className="mx-auto h-32 w-32 overflow-hidden rounded-full ring-4 ring-gold-300/70">
+                    <img
+                      src={teacher.image}
+                      alt={`Islamic art representing ${teacher.subject}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-5 text-lg font-bold text-slate-900">{teacher.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-primary-700">{teacher.subject}</p>
+                  <p className="mt-3 text-sm text-slate-600">{teacher.bio}</p>
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-slate-900">{teacher.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-primary-700">{teacher.subject}</p>
-                <p className="mt-3 text-slate-600">{teacher.bio}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

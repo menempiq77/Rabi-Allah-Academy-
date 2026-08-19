@@ -38,8 +38,8 @@ export default function Articles() {
 
       <div className="relative overflow-hidden py-24 text-center text-white">
         <img
-          src="/images/articles.jpg"
-          alt="Open book and learning"
+          src="/images/al-azhar.jpg"
+          alt="Courtyard of a historic centre of Islamic learning"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-primary-950/90" />
@@ -73,6 +73,7 @@ export default function Articles() {
               </div>
               <div className="p-6">
                 <h2 className="text-lg font-bold text-slate-900 group-hover:text-primary-700 transition">{article.title}</h2>
+                <p className="mt-3 text-sm text-slate-600 line-clamp-3">{article.excerpt}</p>
               </div>
             </Link>
           ))}
