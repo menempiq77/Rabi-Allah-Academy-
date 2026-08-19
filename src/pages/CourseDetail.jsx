@@ -3,6 +3,7 @@ import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import { ArrowLeft, CheckCircle } from 'lucide-react'
 import { courses, pricingTiers } from '../data/courses'
+import { asset } from '../lib/asset'
 
 export default function CourseDetail() {
   const { slug } = useParams()
@@ -46,7 +47,7 @@ export default function CourseDetail() {
       <JsonLd data={courseSchema} />
       <div className="relative h-72 overflow-hidden sm:h-96">
         <img
-          src={course.image}
+          src={asset(course.image)}
           alt={course.title}
           className="h-full w-full object-cover"
         />

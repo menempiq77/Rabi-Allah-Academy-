@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { asset } from '../lib/asset'
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -20,7 +21,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="/images/logo.png"
+              src={asset('/images/logo.png')}
               alt="Rabi Allah Islamic Academy logo"
               className="h-12 w-auto"
               onError={(e) => { e.target.style.display = 'none' }}

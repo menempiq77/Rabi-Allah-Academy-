@@ -1,6 +1,7 @@
 import { Target, Compass, Sparkles, User } from 'lucide-react'
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
+import { asset } from '../lib/asset'
 
 const teachers = [
   {
@@ -54,7 +55,7 @@ export default function About() {
       <JsonLd data={aboutData} />
       <div className="relative overflow-hidden bg-primary-900 py-20 text-center text-white">
         <img
-          src="/images/lantern.jpg"
+          src={asset('/images/lantern.jpg')}
           alt="Islamic lantern"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -168,7 +169,7 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary-100 via-gold-100 to-primary-50" />
               <img
-                src="/images/founder.jpg"
+                src={asset('/images/founder.jpg')}
                 alt="Founder of Rabi Allah Islamic Academy"
                 className="relative w-full rounded-2xl object-cover shadow-xl"
               />
@@ -226,7 +227,7 @@ export default function About() {
                 >
                   <div className="mx-auto h-32 w-32 overflow-hidden rounded-full ring-4 ring-gold-300/70">
                     <img
-                      src={teacher.image}
+                      src={asset(teacher.image)}
                       alt={`Islamic art representing ${teacher.subject}`}
                       className="h-full w-full object-cover"
                     />

@@ -6,6 +6,7 @@ import JsonLd from '../components/JsonLd'
 import CourseModal from '../components/CourseModal'
 import { ArrowRight, Star, CheckCircle, Play, Calendar, MessageCircle } from 'lucide-react'
 import { courses } from '../data/courses'
+import { asset } from '../lib/asset'
 
 const features = [
   {
@@ -140,7 +141,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <img
-              src="/images/welcome-quran.jpg"
+              src={asset('/images/welcome-quran.jpg')}
               alt="Open Qur’an prepared for study"
               className="aspect-[4/3] w-full rounded-2xl object-cover shadow-2xl"
             />
@@ -178,7 +179,7 @@ export default function Home() {
                 >
                   <div className="relative h-36 overflow-hidden">
                     <img
-                      src={course.image}
+                      src={asset(course.image)}
                       alt={course.title}
                       className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     />

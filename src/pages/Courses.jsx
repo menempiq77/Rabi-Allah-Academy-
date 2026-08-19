@@ -5,6 +5,7 @@ import JsonLd from '../components/JsonLd'
 import CourseModal from '../components/CourseModal'
 import { ArrowRight } from 'lucide-react'
 import { courses, pricingTiers } from '../data/courses'
+import { asset } from '../lib/asset'
 
 export default function Courses() {
   const [selected, setSelected] = useState(null)
@@ -40,7 +41,7 @@ export default function Courses() {
       <JsonLd data={courseListData} />
       <div className="relative overflow-hidden bg-primary-900 py-20 text-center text-white">
         <img
-          src="/images/motif-dome.jpg"
+          src={asset('/images/motif-dome.jpg')}
           alt="Decorated dome of a mosque"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -67,7 +68,7 @@ export default function Courses() {
               >
                 <div className="relative h-40 overflow-hidden">
                   <img
-                    src={course.image}
+                    src={asset(course.image)}
                     alt={course.title}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />

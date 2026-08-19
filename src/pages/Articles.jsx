@@ -3,6 +3,7 @@ import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import { ArrowRight } from 'lucide-react'
 import { articles } from '../data/articles'
+import { asset } from '../lib/asset'
 
 export default function Articles() {
   const articlesData = {
@@ -38,7 +39,7 @@ export default function Articles() {
 
       <div className="relative overflow-hidden py-24 text-center text-white">
         <img
-          src="/images/al-azhar.jpg"
+          src={asset('/images/al-azhar.jpg')}
           alt="Courtyard of a historic centre of Islamic learning"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -61,7 +62,7 @@ export default function Articles() {
             >
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={article.image}
+                  src={asset(article.image)}
                   alt={article.title}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
