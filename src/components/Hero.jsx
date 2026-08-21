@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, Users, Heart } from 'lucide-react'
+import { ArrowRight, BookOpen, Users, Heart, LogIn } from 'lucide-react'
 import { asset } from '../lib/asset'
+import { LMS_URL } from '../lib/lms'
 
 const slides = [
   {
@@ -75,7 +76,19 @@ export default function Hero() {
           <Link to="/contact" className="btn-secondary border-white text-white hover:bg-white/10">
             Book a Free Trial
           </Link>
+          <a
+            href={LMS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary border-gold-400 text-gold-200 hover:bg-gold-400/10"
+          >
+            <LogIn className="mr-2 h-4 w-4" />
+            Log In
+          </a>
         </div>
+        <p className="mt-3 text-sm text-primary-200">
+          Students, parents and teachers: log in to your classroom on our learning platform.
+        </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-3">
           {highlights.map((item) => (
