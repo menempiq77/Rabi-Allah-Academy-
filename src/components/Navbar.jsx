@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { LogIn, Menu, X } from 'lucide-react'
 import { asset } from '../lib/asset'
+import { LMS_URL } from '../lib/lms'
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -46,6 +47,15 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <a
+              href={LMS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-primary-700"
+            >
+              <LogIn className="h-4 w-4" />
+              Log In
+            </a>
             <Link to="/contact" className="btn-primary">
               Free Trial
             </Link>
@@ -79,10 +89,20 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <a
+              href={LMS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="mt-4 flex items-center justify-center gap-2 rounded-md border border-primary-700 px-3 py-2 text-base font-medium text-primary-700 hover:bg-primary-50"
+            >
+              <LogIn className="h-4 w-4" />
+              Log In
+            </a>
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className="mt-4 block rounded-md bg-primary-700 px-3 py-2 text-center text-base font-medium text-white hover:bg-primary-800"
+              className="mt-2 block rounded-md bg-primary-700 px-3 py-2 text-center text-base font-medium text-white hover:bg-primary-800"
             >
               Free Trial
             </Link>
