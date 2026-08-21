@@ -166,13 +166,21 @@ export default function About() {
         {/* Founder */}
         <div className="mt-20">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary-100 via-gold-100 to-primary-50" />
-              <img
-                src={asset('/images/founder.jpg')}
-                alt="Founder of Rabi Allah Islamic Academy"
-                className="relative w-full rounded-2xl object-cover shadow-xl"
-              />
+            <div className="mx-auto w-full max-w-xs lg:max-w-sm">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary-100 via-gold-100 to-primary-50" />
+                <img
+                  src={asset('/images/founder.jpg')}
+                  alt="Abdelmonem Eleslamboly, founder of Rabi Allah Islamic Academy"
+                  className="relative w-full rounded-2xl object-cover shadow-xl"
+                />
+              </div>
+              <p className="relative mt-6 text-center text-lg font-bold text-slate-900">
+                Abdelmonem Eleslamboly
+              </p>
+              <p className="relative text-center text-sm text-slate-600">
+                Founder, Rabi Allah Islamic Academy
+              </p>
             </div>
             <div>
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold-100">
