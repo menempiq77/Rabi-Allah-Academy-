@@ -2,36 +2,103 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rabiallah.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar" />
   </url>
   <url>
     <loc>https://rabiallah.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/about" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/about" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles" />
   </url>
   <url>
     <loc>https://rabiallah.com/ar/articles</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles" />
   </url>
   <url>
     <loc>https://rabiallah.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/contact" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/contact" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/quran-recitation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-recitation" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-recitation" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/quran-recitation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-recitation" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-recitation" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/quran-memorization</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-memorization" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-memorization" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/quran-memorization</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-memorization" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-memorization" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/arabic-through-quran</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/arabic-through-quran" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/arabic-through-quran" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/arabic-through-quran</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/arabic-through-quran" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/arabic-through-quran" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/islamic-studies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islamic-studies" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islamic-studies" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/islamic-studies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islamic-studies" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islamic-studies" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/islam-for-new-muslims</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islam-for-new-muslims" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islam-for-new-muslims" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/islam-for-new-muslims</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islam-for-new-muslims" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islam-for-new-muslims" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/tafsir-bismillah-ar-rahman-ar-raheem</loc>

@@ -11,7 +11,10 @@ export default function SEO({
   type = 'website',
 }) {
   const siteUrl = 'https://rabiallah.com'
-  const url = path ? `${siteUrl}${path}` : siteUrl
+  const localizedPath = lang === 'ar' && path && path !== '/ar' && !path.startsWith('/ar/')
+    ? path === '/' ? '/ar' : `/ar${path}`
+    : path
+  const url = localizedPath ? `${siteUrl}${localizedPath}` : siteUrl
   const imageUrl = image
     ? /^(https?:)?\/\//.test(image)
       ? image

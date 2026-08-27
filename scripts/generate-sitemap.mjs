@@ -9,16 +9,38 @@ const vite = await createServer({
 const { articles } = await vite.ssrLoadModule('/src/data/articles.js')
 const { courses } = await vite.ssrLoadModule('/src/data/courses.js')
 await vite.close()
-const staticPaths = ['/', '/about', '/courses', '/articles', '/ar/articles', '/contact']
-const urls = [
-  ...staticPaths.map((path) => ({ path })),
-  ...courses.map(({ slug }) => ({ path: `/courses/${slug}` })),
-  ...articles.flatMap((article) => {
-    const paths = [{ path: `/articles/${article.slug}`, article }]
-    if (article.ar) paths.push({ path: `/ar/articles/${article.slug}`, article })
-    return paths
-  }),
+const pairedPaths = [
+  ['/', '/ar'],
+  ['/about', '/ar/about'],
+  ['/courses', '/ar/courses'],
+  ['/articles', '/ar/articles'],
+  ['/contact', '/ar/contact'],
 ]
+const urls = pairedPaths.flatMap(([englishPath, arabicPath]) => [
+  { path: englishPath, alternates: [['en', englishPath], ['ar', arabicPath]] },
+  { path: arabicPath, alternates: [['en', englishPath], ['ar', arabicPath]] },
+])
+
+for (const { slug } of courses) {
+  const englishPath = `/courses/${slug}`
+  const arabicPath = `/ar/courses/${slug}`
+  urls.push(
+    { path: englishPath, alternates: [['en', englishPath], ['ar', arabicPath]] },
+    { path: arabicPath, alternates: [['en', englishPath], ['ar', arabicPath]] },
+  )
+}
+
+for (const article of articles) {
+  const englishPath = `/articles/${article.slug}`
+  const paths = [{ path: englishPath, article }]
+  if (article.ar) paths.push({ path: `/ar/articles/${article.slug}`, article })
+  for (const entry of paths) {
+    entry.alternates = article.ar
+      ? [['en', englishPath], ['ar', `/ar/articles/${article.slug}`]]
+      : undefined
+    urls.push(entry)
+  }
+}
 
 function escapeXml(value) {
   return value
@@ -29,12 +51,9 @@ function escapeXml(value) {
     .replaceAll("'", '&apos;')
 }
 
-function alternateLinks(article) {
-  if (!article?.ar) return ''
-  return [
-    ['en', `/articles/${article.slug}`],
-    ['ar', `/ar/articles/${article.slug}`],
-  ]
+function alternateLinks(alternates) {
+  if (!alternates) return ''
+  return alternates
     .map(
       ([hrefLang, path]) =>
         `\n    <xhtml:link rel="alternate" hreflang="${hrefLang}" href="${escapeXml(`${siteUrl}${path}`)}" />`,
@@ -43,9 +62,9 @@ function alternateLinks(article) {
 }
 
 const body = urls
-  .map(({ path, article }) => {
+  .map(({ path, article, alternates }) => {
     const lastmod = article?.date ? `\n    <lastmod>${escapeXml(article.date)}</lastmod>` : ''
-    return `  <url>\n    <loc>${escapeXml(`${siteUrl}${path}`)}</loc>${lastmod}${alternateLinks(article)}\n  </url>`
+    return `  <url>\n    <loc>${escapeXml(`${siteUrl}${path}`)}</loc>${lastmod}${alternateLinks(alternates)}\n  </url>`
   })
   .join('\n')
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${body}\n</urlset>\n`
