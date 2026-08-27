@@ -40,13 +40,9 @@ export default function SEO({
       <meta property="og:type" content={type} />
       <meta name="twitter:title" content={title || 'Rabi Allah Islamic Academy'} />
       <meta name="twitter:description" content={description} />
-      {imageUrl && (
-        <>
-          <meta property="og:image" content={imageUrl} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content={imageUrl} />
-        </>
-      )}
+      {imageUrl && <meta property="og:image" content={imageUrl} />}
+      {imageUrl && <meta name="twitter:card" content="summary_large_image" />}
+      {imageUrl && <meta name="twitter:image" content={imageUrl} />}
       {alternateLinks.map(({ hrefLang, path: alternatePath }) => (
         <link
           key={hrefLang}

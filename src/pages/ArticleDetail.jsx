@@ -1,9 +1,10 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, Navigate } from 'react-router-dom'
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import { ArrowLeft } from 'lucide-react'
 import { articles } from '../data/articles'
 import { asset } from '../lib/asset'
+import { localizeArticle } from '../lib/article'
 
 function absoluteUrl(path) {
   return /^(https?:)?\/\//.test(path) ? path : `https://rabiallah.com${path}`
@@ -33,7 +34,11 @@ export default function ArticleDetail({ lang = 'en' }) {
     )
   }
 
-  const content = isArabic && article.ar ? { ...article, ...article.ar } : article
+  if (isArabic && !article.ar) {
+    return <Navigate to={`/articles/${slug}`} replace />
+  }
+
+  const content = localizeArticle(article, lang)
   const hasArabic = Boolean(article.ar)
   const Icon = article.icon
   const formattedDate = article.date
@@ -63,6 +68,7 @@ export default function ArticleDetail({ lang = 'en' }) {
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://rabiallah.com${path}`,
+      url: `https://rabiallah.com${path}`,
     },
     datePublished: article.date,
     inLanguage: lang,
