@@ -2,97 +2,89 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rabiallah.com/</loc>
-    <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://rabiallah.com/about</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://rabiallah.com/courses</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/courses/quran-recitation</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/courses/quran-memorization</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/courses/arabic-through-quran</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/courses/islamic-studies</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/courses/islam-for-new-muslims</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://rabiallah.com/articles</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://rabiallah.com/articles/wife-responsibilities-in-islam</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/husband-responsibilities-in-islam</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/responsibilities-of-a-ruler-in-islam</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/the-dangers-of-ramadan</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/hurricane-milton-islamic-reflection</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/seeking-refuge-with-allah</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/time-a-precious-asset-of-life</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/mercy-of-the-prophet-in-the-mosque</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://rabiallah.com/articles/the-power-of-dua</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://rabiallah.com/ar/articles</loc>
   </url>
   <url>
     <loc>https://rabiallah.com/contact</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/courses/quran-recitation</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/courses/quran-memorization</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/courses/arabic-through-quran</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/courses/islamic-studies</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/courses/islam-for-new-muslims</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/wife-responsibilities-in-islam</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/wife-responsibilities-in-islam</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/husband-responsibilities-in-islam</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/husband-responsibilities-in-islam</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/responsibilities-of-a-ruler-in-islam</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/responsibilities-of-a-ruler-in-islam</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/the-dangers-of-ramadan</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/the-dangers-of-ramadan</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/hurricane-milton-islamic-reflection</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/hurricane-milton-islamic-reflection</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/seeking-refuge-with-allah</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/seeking-refuge-with-allah</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/time-a-precious-asset-of-life</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/time-a-precious-asset-of-life</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/mercy-of-the-prophet-in-the-mosque</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/mercy-of-the-prophet-in-the-mosque</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/articles/the-power-of-dua</loc>
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/the-power-of-dua</loc>
   </url>
 </urlset>
