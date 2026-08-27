@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { LogIn, Menu, X } from 'lucide-react'
 import { asset } from '../lib/asset'
 import { LMS_URL } from '../lib/lms'
+import { whatsappUrl } from '../lib/whatsapp'
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -56,9 +57,14 @@ export default function Navbar() {
               <LogIn className="h-4 w-4" />
               Log In
             </a>
-            <Link to="/contact" className="btn-primary">
-              Free Trial
-            </Link>
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
+              Apply on WhatsApp
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -99,13 +105,15 @@ export default function Navbar() {
               <LogIn className="h-4 w-4" />
               Log In
             </a>
-            <Link
-              to="/contact"
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setIsOpen(false)}
               className="mt-2 block rounded-md bg-primary-700 px-3 py-2 text-center text-base font-medium text-white hover:bg-primary-800"
             >
-              Free Trial
-            </Link>
+              Apply on WhatsApp
+            </a>
           </div>
         </div>
       )}

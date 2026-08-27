@@ -1,9 +1,10 @@
 import { useParams, Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
-import { ArrowLeft, CheckCircle } from 'lucide-react'
+import { ArrowLeft, CheckCircle, MessageCircle } from 'lucide-react'
 import { courses, pricingTiers } from '../data/courses'
 import { asset } from '../lib/asset'
+import { whatsappUrl } from '../lib/whatsapp'
 
 export default function CourseDetail() {
   const { slug } = useParams()
@@ -144,9 +145,15 @@ export default function CourseDetail() {
         )}
 
         <div className="mt-10 text-center">
-          <Link to="/contact" className="btn-primary text-lg px-8 py-4">
-            {course.paid ? 'Book Your Free Trial' : 'Enroll for Free'}
-          </Link>
+          <a
+            href={whatsappUrl(course.title)}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary text-lg px-8 py-4"
+          >
+            <MessageCircle className="mr-2 h-5 w-5" />
+            Apply on WhatsApp
+          </a>
         </div>
       </section>
     </>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpen, Users, Heart, LogIn } from 'lucide-react'
 import { asset } from '../lib/asset'
 import { LMS_URL } from '../lib/lms'
+import { whatsappUrl } from '../lib/whatsapp'
 
 const slides = [
   {
@@ -73,9 +74,14 @@ export default function Hero() {
             Explore Courses
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
-          <Link to="/contact" className="btn-secondary border-white text-white hover:bg-white/10">
-            Book a Free Trial
-          </Link>
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-secondary border-white text-white hover:bg-white/10"
+          >
+            Apply on WhatsApp
+          </a>
           <a
             href={LMS_URL}
             target="_blank"
