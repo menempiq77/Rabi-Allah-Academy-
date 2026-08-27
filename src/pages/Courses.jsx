@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import CourseModal from '../components/CourseModal'
