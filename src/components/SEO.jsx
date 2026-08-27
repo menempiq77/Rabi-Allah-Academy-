@@ -11,7 +11,13 @@ export default function SEO({
   type = 'website',
 }) {
   const siteUrl = 'https://rabiallah.com'
-  const url = path ? `${siteUrl}${path}` : siteUrl
+  const localizedPath =
+    lang === 'ar' && path && path !== '/ar' && !path.startsWith('/ar/')
+      ? path === '/'
+        ? '/ar'
+        : `/ar${path}`
+      : path
+  const url = localizedPath ? `${siteUrl}${localizedPath}` : siteUrl
   const imageUrl = image
     ? /^(https?:)?\/\//.test(image)
       ? image
@@ -19,18 +25,17 @@ export default function SEO({
     : null
   const englishPath = alternates?.find(({ hrefLang }) => hrefLang === 'en')?.path
   const alternateLinks = alternates
-    ? [
-        ...alternates,
-        ...(englishPath
-          ? [{ hrefLang: 'x-default', path: englishPath }]
-          : []),
-      ]
+    ? [...alternates, ...(englishPath ? [{ hrefLang: 'x-default', path: englishPath }] : [])]
     : []
 
   return (
     <Helmet>
       <html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'} />
-      <title>{title ? `${title} | Rabi Allah Islamic Academy` : 'Rabi Allah Islamic Academy – From Learning to Living Islam'}</title>
+      <title>
+        {title
+          ? `${title} | Rabi Allah Islamic Academy`
+          : 'Rabi Allah Islamic Academy – From Learning to Living Islam'}
+      </title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />

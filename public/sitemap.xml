@@ -2,36 +2,103 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rabiallah.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar" />
   </url>
   <url>
     <loc>https://rabiallah.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/about" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/about" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles" />
   </url>
   <url>
     <loc>https://rabiallah.com/ar/articles</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles" />
   </url>
   <url>
     <loc>https://rabiallah.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/contact" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/contact" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/quran-recitation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-recitation" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-recitation" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/quran-recitation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-recitation" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-recitation" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/quran-memorization</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-memorization" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-memorization" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/quran-memorization</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/quran-memorization" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/quran-memorization" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/arabic-through-quran</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/arabic-through-quran" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/arabic-through-quran" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/arabic-through-quran</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/arabic-through-quran" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/arabic-through-quran" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/islamic-studies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islamic-studies" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islamic-studies" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/islamic-studies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islamic-studies" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islamic-studies" />
   </url>
   <url>
     <loc>https://rabiallah.com/courses/islam-for-new-muslims</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islam-for-new-muslims" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islam-for-new-muslims" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/courses/islam-for-new-muslims</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/courses/islam-for-new-muslims" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/courses/islam-for-new-muslims" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/tafsir-bismillah-ar-rahman-ar-raheem</loc>
@@ -120,37 +187,109 @@
   <url>
     <loc>https://rabiallah.com/articles/wife-responsibilities-in-islam</loc>
     <lastmod>2025-01-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/wife-responsibilities-in-islam" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/wife-responsibilities-in-islam" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/wife-responsibilities-in-islam</loc>
+    <lastmod>2025-01-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/wife-responsibilities-in-islam" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/wife-responsibilities-in-islam" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/husband-responsibilities-in-islam</loc>
     <lastmod>2025-01-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/husband-responsibilities-in-islam" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/husband-responsibilities-in-islam" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/husband-responsibilities-in-islam</loc>
+    <lastmod>2025-01-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/husband-responsibilities-in-islam" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/husband-responsibilities-in-islam" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/responsibilities-of-a-ruler-in-islam</loc>
     <lastmod>2025-01-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/responsibilities-of-a-ruler-in-islam" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/responsibilities-of-a-ruler-in-islam" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/responsibilities-of-a-ruler-in-islam</loc>
+    <lastmod>2025-01-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/responsibilities-of-a-ruler-in-islam" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/responsibilities-of-a-ruler-in-islam" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/the-dangers-of-ramadan</loc>
     <lastmod>2025-01-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/the-dangers-of-ramadan" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/the-dangers-of-ramadan" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/the-dangers-of-ramadan</loc>
+    <lastmod>2025-01-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/the-dangers-of-ramadan" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/the-dangers-of-ramadan" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/hurricane-milton-islamic-reflection</loc>
     <lastmod>2024-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/hurricane-milton-islamic-reflection" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/hurricane-milton-islamic-reflection" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/hurricane-milton-islamic-reflection</loc>
+    <lastmod>2024-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/hurricane-milton-islamic-reflection" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/hurricane-milton-islamic-reflection" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/seeking-refuge-with-allah</loc>
     <lastmod>2024-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/seeking-refuge-with-allah" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/seeking-refuge-with-allah" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/seeking-refuge-with-allah</loc>
+    <lastmod>2024-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/seeking-refuge-with-allah" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/seeking-refuge-with-allah" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/time-a-precious-asset-of-life</loc>
     <lastmod>2024-08-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/time-a-precious-asset-of-life" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/time-a-precious-asset-of-life" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/time-a-precious-asset-of-life</loc>
+    <lastmod>2024-08-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/time-a-precious-asset-of-life" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/time-a-precious-asset-of-life" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/mercy-of-the-prophet-in-the-mosque</loc>
     <lastmod>2024-06-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/mercy-of-the-prophet-in-the-mosque" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/mercy-of-the-prophet-in-the-mosque" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/mercy-of-the-prophet-in-the-mosque</loc>
+    <lastmod>2024-06-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/mercy-of-the-prophet-in-the-mosque" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/mercy-of-the-prophet-in-the-mosque" />
   </url>
   <url>
     <loc>https://rabiallah.com/articles/the-power-of-dua</loc>
     <lastmod>2024-06-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/the-power-of-dua" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/the-power-of-dua" />
+  </url>
+  <url>
+    <loc>https://rabiallah.com/ar/articles/the-power-of-dua</loc>
+    <lastmod>2024-06-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rabiallah.com/articles/the-power-of-dua" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://rabiallah.com/ar/articles/the-power-of-dua" />
   </url>
 </urlset>

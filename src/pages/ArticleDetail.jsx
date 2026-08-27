@@ -5,11 +5,11 @@ import { ArrowLeft } from 'lucide-react'
 import { articles } from '../data/articles'
 import { asset } from '../lib/asset'
 import { localizeArticle } from '../lib/article'
+import { localePath, useLang, useT } from '../i18n'
 
 function absoluteUrl(path) {
   return /^(https?:)?\/\//.test(path) ? path : `https://rabiallah.com${path}`
 }
-
 function durationToIso8601(seconds) {
   if (!seconds) return undefined
   const hours = Math.floor(seconds / 3600)
@@ -18,29 +18,31 @@ function durationToIso8601(seconds) {
   return `PT${hours ? `${hours}H` : ''}${minutes ? `${minutes}M` : ''}${remainder ? `${remainder}S` : ''}`
 }
 
-export default function ArticleDetail({ lang = 'en' }) {
+export default function ArticleDetail() {
   const { slug } = useParams()
-  const article = articles.find((a) => a.slug === slug)
+  const lang = useLang()
+  const t = useT()
   const isArabic = lang === 'ar'
-
-  if (!article) {
+  const article = articles.find((item) => item.slug === slug)
+  if (!article)
     return (
-      <div dir={isArabic ? 'rtl' : 'ltr'} className={`mx-auto max-w-7xl px-4 py-20 text-center ${isArabic ? 'font-sans' : ''}`}>
-        <h2 className="text-2xl font-bold text-slate-900">{isArabic ? 'المقال غير موجود' : 'Article not found'}</h2>
-        <Link to={isArabic ? '/ar/articles' : '/articles'} className="mt-4 inline-flex items-center text-primary-700 hover:underline">
-          <ArrowLeft className="mr-2 h-4 w-4" /> {isArabic ? 'العودة إلى المقالات' : 'Back to articles'}
+      <div className="mx-auto max-w-7xl px-4 py-20 text-center">
+        <h2 className="text-2xl font-bold text-slate-900">{t('articleDetail.notFound')}</h2>
+        <Link
+          to={localePath(lang, '/articles')}
+          className="mt-4 inline-flex items-center text-primary-700 hover:underline"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          {t('articleDetail.backToArticles')}
         </Link>
       </div>
     )
-  }
-
-  if (isArabic && !article.ar) {
-    return <Navigate to={`/articles/${slug}`} replace />
-  }
-
+  if (isArabic && !article.ar)
+    return <Navigate to={localePath('en', `/articles/${slug}`)} replace />
   const content = localizeArticle(article, lang)
   const hasArabic = Boolean(article.ar)
   const Icon = article.icon
+  const path = `/articles/${article.slug}`
   const formattedDate = article.date
     ? new Date(article.date).toLocaleDateString(isArabic ? 'ar-EG' : 'en-GB', {
         day: 'numeric',
@@ -48,14 +50,14 @@ export default function ArticleDetail({ lang = 'en' }) {
         year: 'numeric',
       })
     : null
-  const path = `${isArabic ? '/ar' : ''}/articles/${article.slug}`
+  const image = article.image ? absoluteUrl(article.image) : undefined
+  const currentPath = localePath(lang, path)
   const alternates = hasArabic
     ? [
-        { hrefLang: 'en', path: `/articles/${article.slug}` },
-        { hrefLang: 'ar', path: `/ar/articles/${article.slug}` },
+        { hrefLang: 'en', path },
+        { hrefLang: 'ar', path: `/ar${path}` },
       ]
     : undefined
-  const image = article.image ? absoluteUrl(article.image) : undefined
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -64,18 +66,15 @@ export default function ArticleDetail({ lang = 'en' }) {
     description: content.excerpt,
     keywords: content.keywords,
     image,
-    url: `https://rabiallah.com${path}`,
+    url: `https://rabiallah.com${currentPath}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://rabiallah.com${path}`,
-      url: `https://rabiallah.com${path}`,
+      '@id': `https://rabiallah.com${currentPath}`,
+      url: `https://rabiallah.com${currentPath}`,
     },
     datePublished: article.date,
     inLanguage: lang,
-    author: {
-      '@type': 'Organization',
-      name: 'Rabi Allah Islamic Academy',
-    },
+    author: { '@type': 'Organization', name: 'Rabi Allah Islamic Academy' },
     publisher: {
       '@type': 'EducationalOrganization',
       name: 'Rabi Allah Islamic Academy',
@@ -103,10 +102,7 @@ export default function ArticleDetail({ lang = 'en' }) {
         mainEntity: content.faq.map(({ q, a }) => ({
           '@type': 'Question',
           name: q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: a,
-          },
+          acceptedAnswer: { '@type': 'Answer', text: a },
         })),
       }
     : null
@@ -120,131 +116,121 @@ export default function ArticleDetail({ lang = 'en' }) {
         image={content.image}
         type="article"
         lang={lang}
-        path={path}
+        path={currentPath}
         alternates={alternates}
       />
       <JsonLd data={articleSchema} />
       {videoSchema && <JsonLd data={videoSchema} />}
       {faqSchema && <JsonLd data={faqSchema} />}
-
-      <div dir={isArabic ? 'rtl' : 'ltr'} className={isArabic ? 'font-sans' : ''}>
-        <div className="relative h-72 overflow-hidden sm:h-96">
-          <img
-            src={asset(article.image)}
-            alt={content.title}
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-950/95 via-primary-900/80 to-primary-900/40" />
-          <div className="absolute inset-0 flex items-end">
-            <div className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-              <Link to={isArabic ? '/ar/articles' : '/articles'} className="mb-4 inline-flex items-center text-sm text-primary-200 hover:text-white">
-                <ArrowLeft className="mr-2 h-4 w-4" /> {isArabic ? 'كل المقالات' : 'All Articles'}
-              </Link>
-              <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
-                  <Icon className="h-8 w-8 text-gold-300" />
-                </div>
-                <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">
-                  {content.title}
-                </h1>
+      <div className="relative h-72 overflow-hidden sm:h-96">
+        <img
+          src={asset(article.image)}
+          alt={content.title}
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/95 via-primary-900/80 to-primary-900/40" />
+        <div className="absolute inset-0 flex items-end">
+          <div className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+            <Link
+              to={localePath(lang, '/articles')}
+              className="mb-4 inline-flex items-center text-sm text-primary-200 hover:text-white"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t('articleDetail.allArticles')}
+            </Link>
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
+                <Icon className="h-8 w-8 text-gold-300" />
               </div>
+              <h1 className="font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                {content.title}
+              </h1>
             </div>
           </div>
         </div>
-
-        <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-          {hasArabic && (
-            <Link
-              to={isArabic ? `/articles/${article.slug}` : `/ar/articles/${article.slug}`}
-              className="mb-6 inline-flex text-sm font-semibold text-primary-700 hover:underline"
-            >
-              {isArabic ? 'English' : 'العربية'}
-            </Link>
-          )}
-          {formattedDate && (
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary-700">
-              {formattedDate}
-            </p>
-          )}
-          <p className="mt-3 text-lg font-medium text-slate-700 leading-relaxed">{content.excerpt}</p>
-
-          {article.video && (
-            <div className="mt-10">
-              <div className="aspect-video overflow-hidden rounded-2xl shadow-lg">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${article.video}`}
-                  title={content.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  className="h-full w-full"
-                />
-              </div>
-              <a
-                href={`https://www.youtube.com/watch?v=${article.video}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex font-semibold text-primary-700 hover:underline"
-              >
-                {isArabic ? 'شاهد الفيديو كامل على يوتيوب' : 'Watch the full video on YouTube'}
-              </a>
-            </div>
-          )}
-
-          <div className="mt-10 space-y-6 text-lg leading-relaxed text-slate-700">
-            {content.blocks.map((block, idx) => {
-              if (block.type === 'h') {
-                return (
-                  <h2 key={idx} className="pt-4 text-2xl font-bold text-slate-900">
-                    {block.text}
-                  </h2>
-                )
-              }
-              if (block.type === 'li') {
-                return (
-                  <div key={idx} className="flex gap-3">
-                    <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-gold-500" />
-                    <p>{block.text}</p>
-                  </div>
-                )
-              }
-              if (block.type === 'quote') {
-                return (
-                  <blockquote
-                    key={idx}
-                    className={`${isArabic ? 'border-r-4' : 'border-l-4'} border-primary-600 bg-primary-50 px-6 py-4 font-serif italic text-slate-800`}
-                  >
-                    {block.text}
-                  </blockquote>
-                )
-              }
-              return <p key={idx}>{block.text}</p>
-            })}
-          </div>
-
-          {content.faq?.length > 0 && (
-            <section className="mt-14 border-t border-slate-200 pt-10">
-              <h2 className="text-2xl font-bold text-slate-900">
-                {isArabic ? 'أسئلة شائعة' : 'Frequently Asked Questions'}
-              </h2>
-              <div className="mt-6 space-y-6">
-                {content.faq.map(({ q, a }) => (
-                  <div key={q}>
-                    <h3 className="text-lg font-bold text-slate-900">{q}</h3>
-                    <p className="mt-2 text-lg leading-relaxed text-slate-700">{a}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          <div className="mt-12 border-t border-slate-200 pt-8">
-            <Link to={isArabic ? '/ar/articles' : '/articles'} className="btn-secondary">
-              <ArrowLeft className="mr-2 h-4 w-4" /> {isArabic ? 'العودة إلى المقالات' : 'Back to Articles'}
-            </Link>
-          </div>
-        </section>
       </div>
+      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+        {hasArabic && (
+          <Link
+            to={localePath(isArabic ? 'en' : 'ar', `/articles/${article.slug}`)}
+            className="mb-6 inline-flex text-sm font-semibold text-primary-700 hover:underline"
+          >
+            {t(isArabic ? 'articleDetail.switchToEnglish' : 'articleDetail.switchToArabic')}
+          </Link>
+        )}
+        {formattedDate && (
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary-700">
+            {formattedDate}
+          </p>
+        )}
+        <p className="mt-3 text-lg font-medium leading-relaxed text-slate-700">{content.excerpt}</p>
+        {article.video && (
+          <div className="mt-10">
+            <div className="aspect-video overflow-hidden rounded-2xl shadow-lg">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${article.video}`}
+                title={content.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="h-full w-full"
+              />
+            </div>
+            <a
+              href={`https://www.youtube.com/watch?v=${article.video}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex font-semibold text-primary-700 hover:underline"
+            >
+              {t('articleDetail.watchVideo')}
+            </a>
+          </div>
+        )}
+        <div className="mt-10 space-y-6 text-lg leading-relaxed text-slate-700">
+          {content.blocks.map((block, idx) =>
+            block.type === 'h' ? (
+              <h2 key={idx} className="pt-4 text-2xl font-bold text-slate-900">
+                {block.text}
+              </h2>
+            ) : block.type === 'li' ? (
+              <div key={idx} className="flex gap-3">
+                <span className="mt-2.5 h-2 w-2 flex-none rounded-full bg-gold-500" />
+                <p>{block.text}</p>
+              </div>
+            ) : block.type === 'quote' ? (
+              <blockquote
+                key={idx}
+                className={`${isArabic ? 'border-r-4' : 'border-l-4'} border-primary-600 bg-primary-50 px-6 py-4 font-serif italic text-slate-800`}
+              >
+                {block.text}
+              </blockquote>
+            ) : (
+              <p key={idx}>{block.text}</p>
+            ),
+          )}
+        </div>
+        {content.faq?.length > 0 && (
+          <section className="mt-14 border-t border-slate-200 pt-10">
+            <h2 className="text-2xl font-bold text-slate-900">
+              {isArabic ? 'أسئلة شائعة' : t('articleDetail.faq')}
+            </h2>
+            <div className="mt-6 space-y-6">
+              {content.faq.map(({ q, a }) => (
+                <div key={q}>
+                  <h3 className="text-lg font-bold text-slate-900">{q}</h3>
+                  <p className="mt-2 text-lg leading-relaxed text-slate-700">{a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+        <div className="mt-12 border-t border-slate-200 pt-8">
+          <Link to={localePath(lang, '/articles')} className="btn-secondary">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            {t('articleDetail.backToArticlesTitle')}
+          </Link>
+        </div>
+      </section>
     </>
   )
 }

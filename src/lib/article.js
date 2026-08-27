@@ -1,3 +1,7 @@
+export function localize(entity, lang = 'en') {
+  return lang === 'ar' && entity.ar ? { ...entity, ...entity.ar } : entity
+}
+
 export function localizeArticle(article, lang = 'en') {
-  return lang === 'ar' && article.ar ? { ...article, ...article.ar } : article
+  return localize(article, lang)
 }
