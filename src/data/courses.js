@@ -38,6 +38,7 @@ export const courses = [
     format: 'Live one-to-one sessions with focused recitation, Tajweed theory, feedback, and revision.',
     ar: {
       title: 'تلاوة القرآن والتجويد',
+      price: 'من 20 دولارًا / شهريًا',
       summary:
         'حسّن طلاقة تلاوتك وجمالها وصحة نطقك من خلال التصحيح الموجّه ودراسة أحكام التجويد بطريقة منظّمة.',
       features: [
@@ -94,6 +95,7 @@ export const courses = [
     format: 'One-to-one online sessions with daily targets, listening, and revision.',
     ar: {
       title: 'تحفيظ القرآن',
+      price: 'من 20 دولارًا / شهريًا',
       summary: 'خطط حفظ مخصصة مع دورات مراجعة تساعد على تثبيت الحفظ على المدى الطويل.',
       features: ['خطة حفظ مخصصة', 'دورات مراجعة يومية', 'تصحيح التجويد', 'متابعة التقدم'],
       description:
@@ -143,6 +145,7 @@ export const courses = [
     format: 'One-to-one online classes with verse analysis, grammar, and guided review.',
     ar: {
       title: 'العربية من خلال القرآن',
+      price: 'من 20 دولارًا / شهريًا',
       summary:
         'تعلّم العربية الفصحى مباشرة من كتاب الله، واربط بين المفردات والقواعد والآيات القرآنية الحقيقية.',
       features: [
@@ -198,6 +201,7 @@ export const courses = [
     format: 'Live online classes with discussions, reflection, quizzes, and age-tailored content.',
     ar: {
       title: 'الدراسات الإسلامية',
+      price: 'من 20 دولارًا / شهريًا',
       summary: 'دراسة شاملة للعقيدة والفقه والسيرة والتفسير والحديث لجميع الأعمار.',
       features: [
         'العقيدة والتوحيد',
@@ -252,6 +256,7 @@ export const courses = [
     format: 'Free supportive online sessions with time for questions and personal guidance.',
     ar: {
       title: 'الإسلام للمسلمين الجدد',
+      price: 'مجانًا',
       summary:
         'مقدمة ترحيبية إلى عقائد الإسلام وممارساته وأخلاقه، مخصصة للمسلمين الجدد ولمن يفكرون بصدق في اعتناقه.',
       features: [
