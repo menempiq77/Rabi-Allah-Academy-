@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Instagram, Mail, MapPin, Clock } from 'lucide-react'
+import { Facebook, Instagram, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
 import { asset } from '../lib/asset'
+import { WHATSAPP_DISPLAY, whatsappUrl } from '../lib/whatsapp'
 
 export default function Footer() {
   return (
@@ -77,6 +78,17 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 shrink-0 text-primary-700" />
                 <span>24 / 7 availability</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MessageCircle className="h-5 w-5 shrink-0 text-primary-700" />
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-primary-700"
+                >
+                  {WHATSAPP_DISPLAY}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-primary-700" />

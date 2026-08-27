@@ -1,8 +1,9 @@
-import { Mail, MapPin, Clock, Facebook, Instagram, ArrowRight } from 'lucide-react'
+import { Mail, MapPin, Clock, Facebook, Instagram, ArrowRight, MessageCircle } from 'lucide-react'
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import { courses } from '../data/courses'
 import { asset } from '../lib/asset'
+import { WHATSAPP_DISPLAY, whatsappUrl } from '../lib/whatsapp'
 
 export default function Contact() {
   const contactData = {
@@ -14,9 +15,11 @@ export default function Contact() {
       '@type': 'EducationalOrganization',
       name: 'Rabi Allah Islamic Academy',
       email: 'Menempiq123@gmail.com',
+      telephone: '+201158967213',
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'Menempiq123@gmail.com',
+        telephone: '+201158967213',
         contactType: 'enrollment',
         availableLanguage: ['English', 'Arabic'],
       },
@@ -54,6 +57,23 @@ export default function Contact() {
             </p>
 
             <div className="mt-8 space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-100">
+                  <MessageCircle className="h-6 w-6 text-primary-700" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">WhatsApp</h3>
+                  <a
+                    href={whatsappUrl()}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-slate-600 hover:text-primary-700"
+                  >
+                    {WHATSAPP_DISPLAY}
+                  </a>
+                </div>
+              </div>
+
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-100">
                   <Mail className="h-6 w-6 text-primary-700" />
@@ -108,6 +128,14 @@ export default function Contact() {
                   className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90"
                 >
                   <Instagram className="h-4 w-4" /> Instagram
+                </a>
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+                >
+                  <MessageCircle className="h-4 w-4" /> Message us on WhatsApp
                 </a>
               </div>
             </div>

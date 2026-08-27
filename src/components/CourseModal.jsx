@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { X, CheckCircle } from 'lucide-react'
+import { X, CheckCircle, MessageCircle } from 'lucide-react'
+import { whatsappUrl } from '../lib/whatsapp'
 
 export default function CourseModal({ course, onClose }) {
   if (!course) return null
@@ -62,13 +62,16 @@ export default function CourseModal({ course, onClose }) {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link
-            to={course.paid ? '/contact' : '/contact'}
+          <a
+            href={whatsappUrl(course.title)}
+            target="_blank"
+            rel="noreferrer"
             onClick={onClose}
             className="btn-primary flex-1 text-center"
           >
-            {course.paid ? 'Book Your Free Trial' : 'Enroll for Free'}
-          </Link>
+            <MessageCircle className="mr-2 h-4 w-4" />
+            Apply on WhatsApp
+          </a>
           <button
             onClick={onClose}
             className="btn-secondary flex-1 border-slate-200 text-slate-700 hover:bg-slate-50"

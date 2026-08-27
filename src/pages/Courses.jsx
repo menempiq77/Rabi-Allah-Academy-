@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import JsonLd from '../components/JsonLd'
 import CourseModal from '../components/CourseModal'
 import { ArrowRight } from 'lucide-react'
 import { courses, pricingTiers } from '../data/courses'
 import { asset } from '../lib/asset'
+import { whatsappUrl } from '../lib/whatsapp'
 
 export default function Courses() {
   const [selected, setSelected] = useState(null)
@@ -126,10 +126,15 @@ export default function Courses() {
           </div>
 
           <div className="mt-12 text-center">
-            <Link to="/contact" className="btn-primary">
-              Book Your Free Trial
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
+              Apply on WhatsApp
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

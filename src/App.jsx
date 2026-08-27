@@ -8,6 +8,7 @@ import CourseDetail from './pages/CourseDetail'
 import Articles from './pages/Articles'
 import ArticleDetail from './pages/ArticleDetail'
 import Contact from './pages/Contact'
+import WhatsAppFloat from './components/WhatsAppFloat'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }
