@@ -9,8 +9,9 @@ import {
   Sparkles,
   Users,
 } from 'lucide-react'
+import { videoArticles } from './videoArticles'
 
-export const articles = [
+const writtenArticles = [
   {
     slug: 'wife-responsibilities-in-islam',
     title: 'The Wife’s Responsibilities to Her Family in Islam',
@@ -908,3 +909,5 @@ export const articles = [
     ],
   },
 ]
+
+export const articles = [...videoArticles, ...writtenArticles]

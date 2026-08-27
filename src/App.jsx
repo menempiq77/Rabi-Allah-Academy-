@@ -22,6 +22,8 @@ function App() {
           <Route path="/courses/:slug" element={<CourseDetail />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<ArticleDetail />} />
+          <Route path="/ar/articles" element={<Articles lang="ar" />} />
+          <Route path="/ar/articles/:slug" element={<ArticleDetail lang="ar" />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
