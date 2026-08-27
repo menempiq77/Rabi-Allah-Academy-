@@ -7,17 +7,160 @@ import { localePath, useLang, useT } from '../i18n'
 export default function About() {
   const lang = useLang()
   const t = useT()
-  const aboutData = { '@context': 'https://schema.org', '@type': 'AboutPage', name: t('about.seoTitle'), url: 'https://rabiallah.com/about', mainEntity: { '@type': 'EducationalOrganization', name: 'Rabi Allah Islamic Academy', description: t('about.missionText') } }
-  return <>
-    <SEO title={t('about.seoTitle')} description={t('about.seoDescription')} keywords={t('about.seoKeywords')} path="/about" lang={lang} alternates={[{ hrefLang: 'en', path: '/about' }, { hrefLang: 'ar', path: '/ar/about' }]} />
-    <JsonLd data={aboutData} />
-    <div className="relative overflow-hidden bg-primary-900 py-20 text-center text-white"><img src={asset('/images/lantern.jpg')} alt={t('about.lanternAlt')} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-primary-950/85" /><div className="pattern-overlay animate-pattern-drift absolute inset-0 opacity-20" /><div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"><h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-serif">{t('about.heroTitle')}</h1><p className="mt-4 text-lg text-primary-100">{t('about.heroDescription')}</p></div></div>
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-      <div className="grid gap-12 lg:grid-cols-2">{[[Target, 'vision', 'visionText', 'bg-primary-100', 'text-primary-700'], [Compass, 'mission', 'missionText', 'bg-gold-100', 'text-gold-700']].map(([Icon, title, body, bg, color]) => <div key={title} className="card"><div className={`flex h-12 w-12 items-center justify-center rounded-lg ${bg}`}><Icon className={`h-6 w-6 ${color}`} /></div><h2 className="mt-6 text-2xl font-bold text-slate-900">{t(`about.${title}`)}</h2><p className="mt-4 leading-relaxed text-slate-600">{t(`about.${body}`)}</p></div>)}</div>
-      <div className="mt-20"><div className="text-center"><div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100"><Sparkles className="h-6 w-6 text-primary-700" /></div><h2 className="mt-6 section-title">{t('about.wayTitle')}</h2><p className="mx-auto mt-4 max-w-3xl section-subtitle">{t('about.wayDescription')}</p></div><div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{t('about.wayCards').map((item) => <div key={item.title} className="rounded-xl border border-slate-200 bg-white p-6 text-center"><h3 className="text-lg font-bold text-slate-900">{item.title}</h3><p className="mt-2 text-slate-600">{item.description}</p></div>)}</div></div>
-      <div className="mt-20 rounded-3xl bg-primary-50 p-8 sm:p-12"><h2 className="section-title text-center">{t('about.whyChoose')}</h2><div className="mt-10 grid gap-8 sm:grid-cols-2">{t('about.reasons').map((item) => <div key={item.title}><h3 className="text-lg font-bold text-slate-900">{item.title}</h3><p className="mt-2 text-slate-600">{item.description}</p></div>)}</div></div>
-      <div className="mt-20"><div className="grid items-center gap-12 lg:grid-cols-2"><div className="mx-auto w-full max-w-xs lg:max-w-sm"><div className="relative"><div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary-100 via-gold-100 to-primary-50" /><img src={asset('/images/founder.jpg')} alt={t('about.founderAlt')} className="relative w-full rounded-2xl object-cover shadow-xl" /></div><p className="relative mt-6 text-center text-lg font-bold text-slate-900">{t('about.founderName')}</p><p className="relative text-center text-sm text-slate-600">{t('about.founder')}</p></div><div><div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold-100"><User className="h-6 w-6 text-gold-700" /></div><h2 className="mt-6 section-title">{t('about.founderSection')}</h2><blockquote className="mt-6 border-l-4 border-gold-400 pl-5 text-lg font-serif italic text-slate-800">{t('about.founderQuote')}</blockquote>{t('about.founderParagraphs').map((paragraph) => <p key={paragraph} className="mt-4 leading-relaxed text-slate-600">{paragraph}</p>)}</div></div></div>
-      <div className="relative mt-24 overflow-hidden rounded-3xl bg-primary-900 px-6 py-16 sm:px-10"><div className="pattern-overlay animate-pattern-drift absolute inset-0 opacity-20" /><div className="relative"><div className="text-center text-white"><p className="text-sm font-semibold uppercase tracking-wider text-gold-300">{t('about.faculty')}</p><h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{t('about.teachersTitle')}</h2><p className="mx-auto mt-4 max-w-3xl text-lg text-primary-100">{t('about.teachersDescription')}</p></div><div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{t('about.teachers').map((teacher) => <div key={teacher.name} className="rounded-2xl border border-white/15 bg-white/95 p-6 text-center shadow-lg"><div className="mx-auto h-32 w-32 overflow-hidden rounded-full ring-4 ring-gold-300/70"><img src={asset(teacher.image)} alt={t('about.teacherAlt', { subject: teacher.subject })} className="h-full w-full object-cover" /></div><h3 className="mt-5 text-lg font-bold text-slate-900">{teacher.name}</h3><p className="mt-1 text-sm font-semibold text-primary-700">{teacher.subject}</p><p className="mt-3 text-sm text-slate-600">{teacher.bio}</p></div>)}</div></div></div>
-    </section>
-  </>
+  const aboutData = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: t('about.seoTitle'),
+    url: 'https://rabiallah.com/about',
+    mainEntity: {
+      '@type': 'EducationalOrganization',
+      name: 'Rabi Allah Islamic Academy',
+      description: t('about.missionText'),
+    },
+  }
+  return (
+    <>
+      <SEO
+        title={t('about.seoTitle')}
+        description={t('about.seoDescription')}
+        keywords={t('about.seoKeywords')}
+        path="/about"
+        lang={lang}
+        alternates={[
+          { hrefLang: 'en', path: '/about' },
+          { hrefLang: 'ar', path: '/ar/about' },
+        ]}
+      />
+      <JsonLd data={aboutData} />
+      <div className="relative overflow-hidden bg-primary-900 py-20 text-center text-white">
+        <img
+          src={asset('/images/lantern.jpg')}
+          alt={t('about.lanternAlt')}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary-950/85" />
+        <div className="pattern-overlay animate-pattern-drift absolute inset-0 opacity-20" />
+        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-serif">
+            {t('about.heroTitle')}
+          </h1>
+          <p className="mt-4 text-lg text-primary-100">{t('about.heroDescription')}</p>
+        </div>
+      </div>
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-2">
+          {[
+            [Target, 'vision', 'visionText', 'bg-primary-100', 'text-primary-700'],
+            [Compass, 'mission', 'missionText', 'bg-gold-100', 'text-gold-700'],
+          ].map(([Icon, title, body, bg, color]) => (
+            <div key={title} className="card">
+              <div className={`flex h-12 w-12 items-center justify-center rounded-lg ${bg}`}>
+                <Icon className={`h-6 w-6 ${color}`} />
+              </div>
+              <h2 className="mt-6 text-2xl font-bold text-slate-900">{t(`about.${title}`)}</h2>
+              <p className="mt-4 leading-relaxed text-slate-600">{t(`about.${body}`)}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-20">
+          <div className="text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100">
+              <Sparkles className="h-6 w-6 text-primary-700" />
+            </div>
+            <h2 className="mt-6 section-title">{t('about.wayTitle')}</h2>
+            <p className="mx-auto mt-4 max-w-3xl section-subtitle">{t('about.wayDescription')}</p>
+          </div>
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {t('about.wayCards').map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-slate-200 bg-white p-6 text-center"
+              >
+                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-slate-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-20 rounded-3xl bg-primary-50 p-8 sm:p-12">
+          <h2 className="section-title text-center">{t('about.whyChoose')}</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2">
+            {t('about.reasons').map((item) => (
+              <div key={item.title}>
+                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-slate-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-20">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="mx-auto w-full max-w-xs lg:max-w-sm">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary-100 via-gold-100 to-primary-50" />
+                <img
+                  src={asset('/images/founder.jpg')}
+                  alt={t('about.founderAlt')}
+                  className="relative w-full rounded-2xl object-cover shadow-xl"
+                />
+              </div>
+              <p className="relative mt-6 text-center text-lg font-bold text-slate-900">
+                {t('about.founderName')}
+              </p>
+              <p className="relative text-center text-sm text-slate-600">{t('about.founder')}</p>
+            </div>
+            <div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold-100">
+                <User className="h-6 w-6 text-gold-700" />
+              </div>
+              <h2 className="mt-6 section-title">{t('about.founderSection')}</h2>
+              <blockquote className="mt-6 border-l-4 border-gold-400 pl-5 text-lg font-serif italic text-slate-800">
+                {t('about.founderQuote')}
+              </blockquote>
+              {t('about.founderParagraphs').map((paragraph) => (
+                <p key={paragraph} className="mt-4 leading-relaxed text-slate-600">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="relative mt-24 overflow-hidden rounded-3xl bg-primary-900 px-6 py-16 sm:px-10">
+          <div className="pattern-overlay animate-pattern-drift absolute inset-0 opacity-20" />
+          <div className="relative">
+            <div className="text-center text-white">
+              <p className="text-sm font-semibold uppercase tracking-wider text-gold-300">
+                {t('about.faculty')}
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+                {t('about.teachersTitle')}
+              </h2>
+              <p className="mx-auto mt-4 max-w-3xl text-lg text-primary-100">
+                {t('about.teachersDescription')}
+              </p>
+            </div>
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {t('about.teachers').map((teacher) => (
+                <div
+                  key={teacher.name}
+                  className="rounded-2xl border border-white/15 bg-white/95 p-6 text-center shadow-lg"
+                >
+                  <div className="mx-auto h-32 w-32 overflow-hidden rounded-full ring-4 ring-gold-300/70">
+                    <img
+                      src={asset(teacher.image)}
+                      alt={t('about.teacherAlt', { subject: teacher.subject })}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-5 text-lg font-bold text-slate-900">{teacher.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-primary-700">{teacher.subject}</p>
+                  <p className="mt-3 text-sm text-slate-600">{teacher.bio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }

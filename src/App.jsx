@@ -14,10 +14,7 @@ import { LanguageProvider } from './i18n'
 function LocalizedSite({ lang }) {
   return (
     <LanguageProvider lang={lang}>
-      <div
-        dir={lang === 'ar' ? 'rtl' : 'ltr'}
-        className="min-h-screen flex flex-col bg-slate-50"
-      >
+      <div dir={lang === 'ar' ? 'rtl' : 'ltr'} className="min-h-screen flex flex-col bg-slate-50">
         <Navbar />
         <main className="flex-grow">
           <Routes>

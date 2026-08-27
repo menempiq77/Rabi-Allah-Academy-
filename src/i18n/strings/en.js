@@ -73,7 +73,8 @@ const en = {
       {
         number: '01',
         title: 'Book a Free Trial',
-        description: 'Send us a message to schedule a free evaluation class at a time that suits you.',
+        description:
+          'Send us a message to schedule a free evaluation class at a time that suits you.',
       },
       {
         number: '02',
@@ -83,7 +84,8 @@ const en = {
       {
         number: '03',
         title: 'Start Learning',
-        description: 'Join live one-to-one online classes with a qualified teacher and structured plan.',
+        description:
+          'Join live one-to-one online classes with a qualified teacher and structured plan.',
       },
     ],
     whyStudyWithUs: 'Why Study With Us?',
@@ -91,23 +93,28 @@ const en = {
     features: [
       {
         title: 'Free Evaluation Class',
-        description: 'Start with a free trial so we can assess your level and place you with the right teacher.',
+        description:
+          'Start with a free trial so we can assess your level and place you with the right teacher.',
       },
       {
         title: 'One-on-One Online Lessons',
-        description: 'Private live sessions give you personal attention, flexible pacing, and direct feedback.',
+        description:
+          'Private live sessions give you personal attention, flexible pacing, and direct feedback.',
       },
       {
         title: 'Structured Learning Plans',
-        description: 'Every student follows a clear roadmap tailored to their goals, age, and schedule.',
+        description:
+          'Every student follows a clear roadmap tailored to their goals, age, and schedule.',
       },
       {
         title: 'Dedicated Student Support',
-        description: 'Our team is with you at every step, from enrollment to progress tracking and scheduling.',
+        description:
+          'Our team is with you at every step, from enrollment to progress tracking and scheduling.',
       },
       {
         title: 'Affordable Monthly Fees',
-        description: 'Competitive pricing with multiple weekly options so quality Islamic education fits your budget.',
+        description:
+          'Competitive pricing with multiple weekly options so quality Islamic education fits your budget.',
       },
     ],
     testimonials: 'Testimonials',
@@ -248,7 +255,8 @@ const en = {
     seoKeywords:
       'Online Quran Classes, Learn Arabic Online, Quran Recitation Course, Tajweed Rules, Quran Memorization, Tafsir Course, Islamic Studies Online, Aqidah, Hadith, Sirah',
     heroTitle: 'Our Courses',
-    heroDescription: 'A complete curriculum aligned with authentic Islamic learning goals and student levels.',
+    heroDescription:
+      'A complete curriculum aligned with authentic Islamic learning goals and student levels.',
     domeAlt: 'Decorated dome of a mosque',
     clickDetails: 'Click for details',
     pricing: 'Pricing',
@@ -272,7 +280,8 @@ const en = {
       },
       {
         duration: '1 Hour',
-        description: 'Extended classes for deeper focus, memorization, and advanced learning goals.',
+        description:
+          'Extended classes for deeper focus, memorization, and advanced learning goals.',
       },
     ],
   },
